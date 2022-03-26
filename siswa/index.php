@@ -155,8 +155,29 @@ $fileJurusan = json_decode(file_get_contents('../data/jurusan.json'));
 		.then(res => res.json())
 		.then(res => {
 			alert(res.message)
+			document.getElementById('nis').readOnly = false
+			document.getElementById('nis').value = "";
+			document.getElementById('nama').value = "";
+			document.getElementById('id_kelas').value = "";
+			document.getElementById('id_jurusan').value = "";
+			document.getElementById('jenis_kelamin').value = "";
+			document.getElementById('tempat_lahir').value = "";
+			document.getElementById('tanggal_lahir').value = "";
+
+			document.getElementById('save').style.display = "block";
+			document.getElementById('update').style.display = "none";
+
 			showData()
 		})
+	}
+
+	function del(nis){
+		fetch(`../api/siswa/destroy.php?nis=${nis}`)
+			.then(res => res.json())
+			.then(res => {
+				alert(res.message)
+				showData()
+			})
 	}
 </script>
 

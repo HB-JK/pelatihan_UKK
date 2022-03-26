@@ -64,8 +64,8 @@ $fileJurusan = json_decode(file_get_contents('../data/jurusan.json'));
 		  	<input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control">
 		  </div>
 
-		  <input type="submit" class="btn btn-primary" value="save" onclick="store()" name="action">
-		  <input type="submit" class="btn btn-primary d-none" value="update" onclick="updateData()" name="action">
+		  <input type="submit" class="btn btn-primary" id="save" value="save" onclick="store()" name="action">
+		  <input type="submit" class="btn btn-primary" style="display: none" id="update" value="update" onclick="updateData()" name="action">
 
 		</div>
 
@@ -112,17 +112,51 @@ $fileJurusan = json_decode(file_get_contents('../data/jurusan.json'));
 	}
 
 	function findSiswa(nis){
-		fetch(`../api/siswa/update.php?nis=${nis}`)
+		fetch(`../api/siswa/findData.php?nis=${nis}`)
 			.then(res => res.json())
 			.then(res => {
-				var nis = document.getElementById('nis').value;
-				var nama = document.getElementById('nama').value;
-				var id_kelas = document.getElementById('id_kelas').value;
-				var id_jurusan = document.getElementById('id_jurusan').value;
-				var jenis_kelamin = document.getElementById('jenis_kelamin').value;
-				var tempat_lahir = document.getElementById('tempat_lahir').value;
-				var tanggal_lahir = document.getElementById('tanggal_lahir').value;
+				document.getElementById('nis').readOnly = true
+				document.getElementById('nis').value = res.nis;
+				document.getElementById('nama').value = res.nama;
+				document.getElementById('id_kelas').value = res.id_kelas;
+				document.getElementById('id_jurusan').value = res.id_jurusan;
+				document.getElementById('jenis_kelamin').value = res.jenis_kelamin;
+				document.getElementById('tempat_lahir').value = res.tempat_lahir;
+				document.getElementById('tanggal_lahir').value = res.tanggal_lahir;
+
+				document.getElementById('save').style.display = "none";
+				document.getElementById('update').style.display = "block";
 			})
+	}
+
+	function updateData(){
+		var nis = document.getElementById('nis').value;
+		var nama = document.getElementById('nama').value;
+		var id_kelas = document.getElementById('id_kelas').value;
+		var id_jurusan = document.getElementById('id_jurusan').value;
+		var jenis_kelamin = document.getElementById('jenis_kelamin').value;
+		var tempat_lahir = document.getElementById('tempat_lahir').value;
+		var tanggal_lahir = document.getElementById('tanggal_lahir').value;
+
+		var data = {
+			nis,
+			nama,
+			id_kelas,
+			id_jurusan,
+			jenis_kelamin,
+			tempat_lahir,
+			tanggal_lahir
+		};
+
+		fetch('../api/siswa/updateData.php', {
+			method: 'POST',
+			body: JSON.stringify(data)
+		})
+		.then(res => res.json())
+		.then(res => {
+			alert(res.message)
+			showData()
+		})
 	}
 </script>
 

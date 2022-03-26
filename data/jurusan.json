@@ -1,0 +1,14 @@
+[
+	{
+		"id_jurusan" : 1,
+		"nama_jurusan" : "Teknik Komputer dan Jaringan"
+	},
+	{
+		"id_jurusan" : 2,
+		"nama_jurusan" : "Akuntasi"
+	},
+	{
+		"id_jurusan" : 3,
+		"nama_jurusan" : "Pemasaran"
+	}
+]

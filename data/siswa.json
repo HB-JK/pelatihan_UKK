@@ -1,0 +1,29 @@
+[
+    {
+        "nis": "6671",
+        "nama": "julius kayne",
+        "id_kelas": "2",
+        "id_jurusan": "1",
+        "jenis_kelamin": "pria",
+        "tempat_lahir": "pontianak",
+        "tanggal_lahir": "2004-07-06"
+    },
+    {
+        "nis": "6674",
+        "nama": "user",
+        "id_kelas": "2",
+        "id_jurusan": "1",
+        "jenis_kelamin": "pria",
+        "tempat_lahir": "Pontianak",
+        "tanggal_lahir": "2022-03-26"
+    },
+    {
+        "nis": "6672",
+        "nama": "Andi",
+        "id_kelas": "2",
+        "id_jurusan": "1",
+        "jenis_kelamin": "pria",
+        "tempat_lahir": "Pontianak",
+        "tanggal_lahir": "2022-03-26"
+    }
+]

@@ -1,0 +1,20 @@
+[
+	{
+		"id_guru" : "1",
+		"nama_guru" : "Arifin",
+		"id_jurusan" : "1",
+		"id_kelas" : "3"
+	},
+	{
+		"id_guru" : "2",
+		"nama_guru" : "Sapto Yusuf",
+		"id_jurusan" : "1",
+		"id_kelas" : "2"
+	},
+	{
+		"id_guru" : "3",
+		"nama_guru" : "Brian Sebastian Halim",
+		"id_jurusan" : "1",
+		"id_kelas" : "1"
+	}
+]

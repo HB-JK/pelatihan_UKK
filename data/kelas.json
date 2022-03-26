@@ -1,0 +1,17 @@
+[
+	{
+		"id_kelas" : 1,
+		"nama_kelas" : "12 TKJ 1",
+		"id_guru" : 3
+	},
+	{
+		"id_kelas" : 2,
+		"nama_kelas" : "12 TKJ 2",
+		"id_guru" : 2
+	},
+	{
+		"id_kelas" : 3,
+		"nama_kelas" : "12 TKJ 3",
+		"id_guru" : 1
+	}
+]

@@ -61,7 +61,7 @@ $fileJurusan = json_decode(file_get_contents('../data/jurusan.json'));
 
 		  <div class="mb-3">
 		  	<label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
-		  	<input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control">
+		  	<input type="date" id="tanggal_lahir" format="dd-mm-yyyy" name="tanggal_lahir" class="form-control">
 		  </div>
 
 		  <input type="submit" class="btn btn-primary" id="save" value="save" onclick="store()" name="action">
@@ -107,6 +107,14 @@ $fileJurusan = json_decode(file_get_contents('../data/jurusan.json'));
 		.then(res => res.json())
 		.then(res => {
 			alert(res.message)
+			document.getElementById('nis').value = '';
+			document.getElementById('nama').value = '';
+			document.getElementById('id_kelas').value = '';
+			document.getElementById('id_jurusan').value = '';
+			document.getElementById('jenis_kelamin').value = '';
+			document.getElementById('tempat_lahir').value = '';
+			document.getElementById('tanggal_lahir').value = '';
+			
 			showData()
 		})
 	}
